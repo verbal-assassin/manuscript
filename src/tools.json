@@ -1,0 +1,12 @@
+{
+  "tools": [
+    {
+      "name": "Speech",
+      "icon": "icon"
+    },
+    {
+      "name": "Eraser",
+      "icon": "icon"
+    }
+  ]
+}
