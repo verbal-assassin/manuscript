@@ -1,0 +1,26 @@
+[
+  {
+    "_id": "601c640537708176e5e33488",
+    "firstname": "Cole",
+    "lastname": "Gordon",
+    "gender": "male",
+    "type": "1",
+    "description": "Cole Gordon is the POTUS"
+  },
+  {
+    "_id": "601c6405f75aa82c9881e36c",
+    "firstname": "Maria",
+    "lastname": "Forester",
+    "gender": "female",
+    "type": "2",
+    "description": "Cabinet member assasinated by TL."
+  },
+  {
+    "_id": "601c64056efa2077ac62220f",        
+    "firstname": "Anastasia",
+    "lastname": "Forester",
+    "gender": "female",
+    "type": "1",
+    "description": "Anastasia is an alcoholic who is the sister of Maria Forester."
+  }
+]

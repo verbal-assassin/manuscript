@@ -1,0 +1,10 @@
+[[
+  '{{repeat(5, 7)}}',
+  {
+    "_id": '{{objectId()}}',
+    guid: '{{guid()}}',
+    isActive: '{{bool()}}',
+    chapter: '{{integer(1,100)}}',
+    viewpoint: '{{lorem(2, "words")}}'
+  }
+]

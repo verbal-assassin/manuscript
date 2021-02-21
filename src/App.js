@@ -1,11 +1,35 @@
-import React, { Fragment, useState, useContext } from 'react';
-import Manuscript from './Manuscript'
-
+import React, { Fragment } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { Grid } from 'semantic-ui-react'
+import Manuscript from './chapters/Manuscript';
 
 export default function App() {
   return (
     <Fragment>
-      <Manuscript />
+      {
+        /*
+          top bar, mainly handles the various "file" aspects
+        */
+      }
+      <BrowserRouter>
+        <Grid>
+          <Grid.Column width={16}>
+          </Grid.Column>
+        </Grid>
+        <Grid>
+
+          <Grid.Column width={2}>
+          </Grid.Column>
+
+          <Grid.Column width={12}>
+            <Manuscript />
+          </Grid.Column>
+
+          <Grid.Column width={2}>
+          </Grid.Column>
+        </Grid>
+      </BrowserRouter>
+
     </Fragment>
-  );
+  )
 }

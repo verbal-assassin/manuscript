@@ -1,4 +1,7 @@
-/* Note: This example only works with Windows Insider Preview Builds 16237+ or the Fall Creators Update. */
+body {
+  padding: 0;
+  margin: 0;
+}
 
 .item1 { grid-area: header; }
 .item2 { grid-area: menu; }
@@ -13,7 +16,6 @@
   'menu main main main main right'
   'menu footer footer footer footer footer';
   grid-gap: 10px;
-  background-color: #2196F3;
   padding: 10px;
 }
 
@@ -21,5 +23,5 @@
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 20px 0;
-  font-size: 30px;
+  font-size: 10px;
 }
