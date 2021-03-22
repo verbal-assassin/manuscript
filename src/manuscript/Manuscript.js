@@ -9,6 +9,12 @@ import Home from '../Home'
 import Characters from '../characters/Characters'
 import Writing from '../writing/Writing';
 import Locations from '../locations/Locations'
+import Renderer from '../pdf/Renderer'
+import LocationManager from '../logic/LocationManager'
+import ManuscriptManager from '../logic/ManuscriptManager'
+import Cartographer from '../logic/Cartographer'
+
+import appConfig from '../AppConfig'
 
 import './manuscript.css'
 
@@ -16,17 +22,27 @@ import './manuscript.css'
 function Manuscript(props) {
 
   const [manuscript, setManuscript] = useState([]);
-
+  const [refresh, setRefresh] = useState(false)
+  const manager = new ManuscriptManager(appConfig)
+  
   const getManuscript = async () => {
 
-    let response = await fetch('http://localhost:8091/manuscript/60274612a2786815445b259f')
-    let data = await response.json()
-    setManuscript(data)
+    const manuscript = await manager.Get('60274612a2786815445b259f')
+    setManuscript(manuscript)
+
   }
+  
+  //  TODO  adding a dependency on useeffect will cause getManuscript to fire when that value changes.
 
   useEffect(() => {
     getManuscript()
-  }, [])
+    setRefresh(false)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [refresh])
+
+  const RenderingComponent = () => (
+    <Renderer data={manuscript} />
+  )
 
   const WritingComponent = () => (
     <Writing data={manuscript} />
@@ -37,7 +53,11 @@ function Manuscript(props) {
   )
 
   const LocationsComponent = () => (
-    <Locations data={manuscript} />
+    <Locations 
+      data={manuscript} 
+      manager={new LocationManager(appConfig)} 
+      onRefresh={setRefresh} 
+      meta={new Cartographer(appConfig)} />
   )
 
   const SideToolsComponent = () => (
@@ -59,9 +79,10 @@ function Manuscript(props) {
           <Grid.Column width={12}>
             <Switch>
               <Route exact path='/' component={Home} />
-              <Route exact path='/manuscript' component={Writing} />
+              <Route exact path='/manuscript' component={WritingComponent} />
               <Route exact path='/characters' component={CharactersComponent} />
               <Route exact path='/locations' component={LocationsComponent} />
+              <Route exact path='/render' component={RenderingComponent} />
             </Switch>
           </Grid.Column>
         </Grid.Row>

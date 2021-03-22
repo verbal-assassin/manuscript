@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import './Chapter.css'
-import { Card } from 'semantic-ui-react'
+import { Card, Progress } from 'semantic-ui-react'
 
 function Chapter(props) {
 
@@ -13,9 +13,10 @@ function Chapter(props) {
     <Fragment>
       <Card onClick={onCardClick}>
         <Card.Content>
-            <Card.Header>{props.chapterInfo.chapter}</Card.Header>
+            <Card.Header><h4>Chapter <span>{props.chapterInfo.chapter}</span></h4></Card.Header>
             <Card.Meta>
-              View Point: {props.chapterInfo.viewpoint}
+              <p>View Point: {props.chapterInfo.viewpoint}</p>
+              <Progress percent={(props.chapterInfo.completeness/10)* 100} size='tiny'/>
             </Card.Meta>
             <Card.Description>
               <em>more chapter info.</em>

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Grid } from 'semantic-ui-react'
-import Manuscript from './chapters/Manuscript';
+import Manuscript from './manuscript/Manuscript';
 
 export default function App() {
   return (

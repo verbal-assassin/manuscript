@@ -13,15 +13,19 @@ const columns = _.times(4, (i) =>(
 
 const ToolHeader = () => {
   return(
-    <Grid centered>
-      {columns}
-    
-      <Grid.Column key={5}>
+    <Grid textAlign='center' columns={3}>
+
+      <Grid.Column key={0}>
+        <Icon name='keyboard' size='large'/>
+        <p>Zen Mode</p>
+      </Grid.Column>
+
+      <Grid.Column key={1}>
         <Icon name='save' size='large'/>
         <p>Save</p>
       </Grid.Column>
     
-      <Grid.Column key={6}>
+      <Grid.Column key={2}>
         <Icon name='settings' size='large'/>
         <p>Settings</p>
       </Grid.Column>

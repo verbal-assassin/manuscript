@@ -62,7 +62,7 @@ function Home() {
                 {
                   data && data.length > 0 && data.map((manuscript) => {
                     return (
-                        <List.Item as='a' href='/manuscript'>
+                        <List.Item as='a' href='/manuscript/'>
                           <Icon name='book' />
                           <List.Content>
                             <List.Header>{manuscript.workingTitle}</List.Header>

@@ -1,98 +1,128 @@
 {
-  "authorName": "philipak",
-  "workingTitle": "presidential honor",
-  "...and he said upon high.  I shall not deviate from what I know is the...",
-  "chapterOrder":[
-    "763d32d0-fd55-45c7-99b5-37c5ba883407", 
-    "b9de463f-73dc-4761-982e-46553df2fa1b",
-    "da2d512d-fab4-4aeb-b950-11d83f36a5d6",
-    "9decdbdc-10af-4a41-ba7e-9ae922769424",
-    "a9c50753-691f-40e2-8284-86a4d6e42580",
-    "5feec3d9-f405-4147-bf30-f6bb687570ca",
-    "e0faed47-3cc6-41ee-b176-e581c8d71db1"
-  ],
-  "chapters": [
-   {
-    "guid": "763d32d0-fd55-45c7-99b5-37c5ba883407",
-    "isActive": true,
-    "chapter": 52,
-    "viewpoint": "velit nisi",
-    "completeness": 2
-  },
-  {
-    "guid": "b9de463f-73dc-4761-982e-46553df2fa1b",
-    "isActive": false,
-    "chapter": 30,
-    "viewpoint": "ex culpa",
-    "completeness": 2
-  },
-  {
-    "guid": "da2d512d-fab4-4aeb-b950-11d83f36a5d6",
-    "isActive": false,
-    "chapter": 78,
-    "viewpoint": "Lorem eu",
-    "completeness": 2
-  },
-  {
-    "guid": "9decdbdc-10af-4a41-ba7e-9ae922769424",
-    "isActive": true,
-    "chapter": 100,
-    "viewpoint": "exercitation laboris",
-    "completeness": 2
-  },
-  {
-    "guid": "a9c50753-691f-40e2-8284-86a4d6e42580",
-    "isActive": true,
-    "chapter": 23,
-    "viewpoint": "ea cupidatat",
-    "completeness": 2
-  },
-  {
-    "guid": "5feec3d9-f405-4147-bf30-f6bb687570ca",
-    "isActive": false,
-    "chapter": 66,
-    "viewpoint": "aliquip culpa",
-    "completeness": 2
-  },
-  {
-    "guid": "e0faed47-3cc6-41ee-b176-e581c8d71db1",
-    "isActive": false,
-    "chapter": 99,
-    "viewpoint": "reprehenderit sit",
-    "completeness": 2
-  }
-  ],
-  "characters": [
-    {
-  	"_id": "601c640537708176e5e33488",
-  	"firstname": "Cole",
-  	"lastname": "Gordon",
-  	"gender": "male",
-  	"type": "1",
-  	"description": "Cole Gordon is the POTUS"
-    },
-    {
-  	"_id": "601c6405f75aa82c9881e36c",
-  	"firstname": "Maria",
-  	"lastname": "Forester",
-  	"gender": "female",
-  	"type": "2",
-  	"description": "Cabinet member assasinated by TL."
-    },
-    {
-  	"_id": "601c64056efa2077ac62220f",        
-  	"firstname": "Anastasia",
-  	"lastname": "Forester",
-  	"gender": "female",
-  	"type": "1",
-  	"description": "Anastasia is an alcoholic who is the sister of Maria Forester."
-    }
-  ],
-  "locations": [
-    {
-      "_id": "",
-      "name": "",
-      "description":""
-    }
-  ]
+	"_id": {
+		"$oid": "60274612a2786815445b259f"
+	},
+	"authorName": "philipak",
+	"workingTitle": "presidential honor",
+	"blurb": "...and he said upon high.  I shall not deviate from what I know is the...",
+	"chapterOrder": [
+		"763d32d0-fd55-45c7-99b5-37c5ba883407",
+		"b9de463f-73dc-4761-982e-46553df2fa1b",
+		"da2d512d-fab4-4aeb-b950-11d83f36a5d6",
+		"9decdbdc-10af-4a41-ba7e-9ae922769424",
+		"a9c50753-691f-40e2-8284-86a4d6e42580",
+		"5feec3d9-f405-4147-bf30-f6bb687570ca",
+		"e0faed47-3cc6-41ee-b176-e581c8d71db1"
+	],
+	"chapters": [
+		{
+			"guid": "763d32d0-fd55-45c7-99b5-37c5ba883407",
+			"isActive": true,
+			"chapter": 52,
+			"viewpoint": "Cole Andrews",
+			"completeness": 5,
+			"sortOrder": 0
+		},
+		{
+			"guid": "b9de463f-73dc-4761-982e-46553df2fa1b",
+			"isActive": false,
+			"chapter": 30,
+			"viewpoint": "ex culpa",
+			"completeness": 8,
+			"sortOrder": 1
+		},
+		{
+			"guid": "da2d512d-fab4-4aeb-b950-11d83f36a5d6",
+			"isActive": false,
+			"chapter": 78,
+			"viewpoint": "Lorem eu",
+			"completeness": 2,
+			"sortOrder": 2
+		},
+		{
+			"guid": "9decdbdc-10af-4a41-ba7e-9ae922769424",
+			"isActive": true,
+			"chapter": 100,
+			"viewpoint": "exercitation laboris",
+			"completeness": 1,
+			"sortOrder": 3
+		},
+		{
+			"guid": "a9c50753-691f-40e2-8284-86a4d6e42580",
+			"isActive": true,
+			"chapter": 23,
+			"viewpoint": "ea cupidatat",
+			"completeness": 3,
+			"sortOrder": 4
+		},
+		{
+			"guid": "5feec3d9-f405-4147-bf30-f6bb687570ca",
+			"isActive": false,
+			"chapter": 66,
+			"viewpoint": "aliquip culpa",
+			"completeness": 0,
+			"sortOrder": 5
+		},
+		{
+			"guid": "e0faed47-3cc6-41ee-b176-e581c8d71db1",
+			"isActive": false,
+			"chapter": 99,
+			"viewpoint": "reprehenderit sit",
+			"completeness": 1,
+			"sortOrder": 6
+		}
+	],
+	"characters": [
+		{
+			"_id": "601c640537708176e5e33488",
+			"sortOrder": 0,
+			"firstname": "Cole",
+			"lastname": "Gordon",
+			"gender": "M",
+			"type": "1",
+			"description": "President of the United States at the start of this book.  He will resign from his presidency due to the tremendous shame & guilt he felt in letting people die."
+		},
+		{
+			"_id": "601c6405f75aa82c9881e36c",
+			"sortOrder": 1,
+			"firstname": "Maria",
+			"lastname": "Forester",
+			"gender": "female",
+			"type": "2",
+			"description": "Cabinet member assassinator by TL.This has a tragic effect on both Cole and Anastasia."
+		},
+		{
+			"_id": "601c64056efa2077ac62220f",
+			"sortOrder": 2,
+			"firstname": "Anastasia",
+			"lastname": "Forester",
+			"gender": "female",
+			"type": "1",
+			"description": "The sister of Maria Forester who was murdered.  This led to a downword spiral resulting in alcoholism.  \n\nCurrently employed at a law firm.  Stasi (as she is known by her coworkers) will be put on administrative leave while her law firm takes up the case in prosecuting the former president."
+		}
+	],
+	"locations": [
+		{
+			"id": "968bb349-391b-41eb-8291-31d0191b279d",
+			"name": "St Louis",
+			"description": "A city in Missouri",
+			"city": "St. Louis",
+			"country": "United States",
+			"region_or_state": "MO",
+			"population": "300,000",
+			"architecturalStyle": "Post Neo Modernism",
+			"weather": "Wait a day, it'll change"
+		},
+		{
+			"id": "df7cc9f6-1f94-4c8f-9c5c-afb8635f6260",
+			"name": "Paloma Estate",
+			"description": "A resort near the outskirts of the city",
+			"city": "Tuscon",
+			"country": "United States",
+			"region_or_state": "AZ",
+			"population": "150,000",
+			"architecturalStyle": "Southwest",
+			"weather": "It's a dry heat."
+		}
+	]
 }

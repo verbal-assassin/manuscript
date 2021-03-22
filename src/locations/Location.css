@@ -1,0 +1,11 @@
+.tight {
+  padding: 0;
+  margin: 0;
+  font-style: italic;
+  font-weight: bolder;
+}
+.xright {
+  text-align: right;
+  font-style: normal;
+  font-weight: normal;
+}
