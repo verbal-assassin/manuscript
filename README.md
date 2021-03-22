@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## What is this project about?
+This project is meant to be a tool that can be used by someone writing a book or manuscript.  I did not find any tools
+that were dedicated to this task, so I decided to write one and in the process learn various things about React, Mongo, etc...
+
+For the time being, the remainder of this readme is a boilerplate created from the create-react-app bootstrapper...
 ## Available Scripts
 
 In the project directory, you can run:
