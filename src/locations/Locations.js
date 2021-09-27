@@ -167,7 +167,7 @@ function Locations(props) {
    */
   const onPersist = async () => {
     const manuscriptId = props.data[0]._id
-    const result = await props.manager.Save(manuscriptId, location)
+    await props.manager.Save(manuscriptId, location)
     showToast()
     //
     //  once toast is toast, save the data.  
@@ -333,7 +333,7 @@ function Locations(props) {
           <Toast level='success' message='Data Saved' visible={notification} />
         </Grid.Column>
         <Grid.Column width={4}>
-          <div class='scrolling content'>
+          <div className='scrolling content'>
             <Card.Group>
               <Card>
                 <Button onClick={resetData} fluid>New Location</Button>

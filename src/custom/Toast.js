@@ -16,22 +16,26 @@ export default class Toast extends React.Component {
     return (
       <div className={classes}>
         <figure>
-          <img src={this.getIcon()}/>
+          <img alt='yo' src={this.getIcon()}/>
         </figure>
         <p>{ this.props.message }</p>
       </div>
     )
   }
-
+  /**
+   * 
+   */
   getIcon() {
     switch (this.props.level) {
+
       case 'warning':return 'http://svgshare.com/i/19x.svg';
       case 'danger':return 'http://svgshare.com/i/19E.svg';
-      case 'success':return 'http://svgshare.com/i/19y.svg';}
-
+      case 'success':return 'http://svgshare.com/i/19y.svg';
+      default: return ''
+    }
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate (nextProps) {
     if (this.props.visible !== nextProps.visible) {
       this.setState({
         visible: nextProps.visible });

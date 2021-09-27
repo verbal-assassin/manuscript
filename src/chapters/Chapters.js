@@ -2,30 +2,15 @@ import React, { useState } from 'react';
 import Chapter from './Chapter';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import DndStyling from '../dnd-styling/dndStyles'
-import { Grid, Card, Button, Popup } from 'semantic-ui-react'
+import { Grid, Card, Button } from 'semantic-ui-react'
 import './Chapter.css'
-
-
-const nullableEntry = {
-
-  "id": "",
-  "name": "",
-  "description": "",
-  "city": "",
-  "country": "",
-  "region_or_state": "",
-  "population": "",
-  "architecturalStyle": "",
-  "weather": ""
-}
 
 
 function Chapters(props) {
   /*
     state management
   */
-  const [chapter, setChapter] = useState(nullableEntry)
-  const [sortedChapters, setSortedChapters] = useState( (props.data.length === 0 ? [] : props.data))
+    const [sortedChapters, setSortedChapters] = useState( (props.data.length === 0 ? [] : props.data))
 
   const resetData = () => {
     console.log('data would be reset')

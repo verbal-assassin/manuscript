@@ -19,7 +19,6 @@ export default class Cartographer extends Base {
   GetCountries = async() => {
 
     if( this.#countryList.length === undefined || this.#countryList.length === 0 ) {
-      let newcountries = []
 
       let start = new Date()
       let countries = await this.GetIt(this.#configuration.countryEndpoint)

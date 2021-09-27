@@ -1,6 +1,7 @@
 export default class Base {
-
+#dumb
   constructor() {
+    this.#dumb = 'dumb'
   }
 
   GetIt = async(url) => {

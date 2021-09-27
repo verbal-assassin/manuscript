@@ -1,0 +1,1 @@
+export const SET_MANUSCRIPT_ID = "SET_MANUSCRIPT_ID"

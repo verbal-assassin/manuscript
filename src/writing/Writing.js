@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from 'react';
 import { Grid, Button } from 'semantic-ui-react'
-import ReactQuill from 'react-quill'
 
 import Chapters from '../chapters/Chapters'
 import SaveWarning from './SaveWarning'
@@ -11,7 +10,7 @@ function Writing(props) {
   const [chapterId, setChapterId] = useState('')
   const [isDirty, setIsDirty] = useState(false)
   const [saveWarningOpen, setSaveWarningOpen] = useState(false)
-  const [timer, setTimer] = useState(0)
+  //const [timer, setTimer] = useState(0)
 
   const ChapterSelected = async (chapterId) => {
 
@@ -27,7 +26,6 @@ function Writing(props) {
    * @param {object} delta expressing the change
    * @param {object} source the source of the change
    * @param {object} editor read only proxy to editor
-   */
   const onTextUpdated = (content, delta, source, editor) => {
     //
     //  is dirty will come into play soon...
@@ -36,8 +34,10 @@ function Writing(props) {
     setChapterText(content)
     clearTimeout(timer)
     setTimer(setTimeout(saveManuscript, 5000))
-
+    if(isDirty){
+    }
   }
+  */
   /**
    * retrieveChapterFromLibrary() method will retrieve the specified chapter
    * from the library API using the chapterId guid indentifier.
@@ -47,7 +47,7 @@ function Writing(props) {
    */
   const retrieveChapterFromLibrary = async (chapterId) => {
 
-   // if (isDirty) {
+    if (isDirty);
    //   setSaveWarningOpen(true)
    // } else {
 
@@ -69,7 +69,7 @@ function Writing(props) {
    * chapter text in the library for this manuscript.
    */
   const updateChapterText = async () => {
-
+    /*
     const url = `http://localhost:8091/manuscript/chapter/${chapterId}`
     var update = { chapterText: chapterText }
 
@@ -82,10 +82,7 @@ function Writing(props) {
     })
 
     console.log(response)
-  }
-
-  const saveManuscript= () => {
-    console.log('manuscript saved.')
+    */
   }
 
   if (props.data.length > 0) {
@@ -94,8 +91,6 @@ function Writing(props) {
         <SaveWarning open={saveWarningOpen} toggle={setSaveWarningOpen}/>
         <Grid>
             <Grid.Column width={10}>
-              <ReactQuill value={chapterText} onChange={onTextUpdated} />
-              <Button onClick={updateChapterText} fluid icon='save' content='Save' />
             </Grid.Column>
             <Grid.Column width={5}>
               <Chapters onChapterSelected={ChapterSelected} data={props.data[0].chapters} />

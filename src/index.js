@@ -2,14 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import 'semantic-ui-css/semantic.min.css'
-import 'react-quill/dist/quill.snow.css'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { createStore, combineReducers } from "redux"
+import { Provider } from 'react-redux'
 
+import {
+  initialManuscriptId,
+  manuscriptIdReducer
+}
+  from './redux/reducers/manuscriptIdReducer';
+
+const combinedReducers = combineReducers({
+  manuscriptId: manuscriptIdReducer
+})
+
+const store = createStore(combinedReducers, initialManuscriptId)
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <Provider store={store}>
+      <App />
+    </Provider>,
   document.getElementById('root')
 );
 
