@@ -19,6 +19,8 @@ export default function App() {
   const [locations, setLocations] = useState([])
   const [characters, setCharacters] = useState([])
   const [chapters, setChapters] = useState([])
+  const [chapter, setChapter] = useState("")
+  const [chapterText, setChapterText] = useState("")
 
   const getManuscript = async () => {
     const manuscript = await manager.Get("60274612a2786815445b259f")
@@ -30,14 +32,34 @@ export default function App() {
       setLocations(manuscript[0].locations)
       setCharacters(manuscript[0].characters)
       setChapters(manuscript[0].chapters)
+      setChapter(manuscript[0].chapters[0].guid)
     }
   }
+
+  useEffect(() => {
+    //
+    //  first make sure chapters exist.
+    //
+    if(chapter !== ""){
+      console.log(`Chapter = ${chapter}`)
+    }
+  }, [chapter])
 
   useEffect(() => {
     getManuscript()
     setRefresh(false)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [refresh])
+
+  const handleChapterChange = async (chapterGuid) => {
+    //
+    //  fires the useEffct because the chapter value of state
+    //  has changed.
+    //
+    setChapter(chapterGuid)
+    const text = await manager.GetChapter(chapterGuid)
+    setChapterText(text)
+  }
 
   return (
     <Fragment>
@@ -56,6 +78,7 @@ export default function App() {
             */}
           <Grid.Column width={3}>
             <Structure
+              onChapterChange={handleChapterChange}
               locations={locations}
               characters={characters}
               chapters={chapters}
@@ -66,7 +89,7 @@ export default function App() {
               this particular section.
             */}
           <Grid.Column width={13}>
-            <ScriptContainer />
+            <ScriptContainer manuscript={manuscript} chapterText={chapterText} />
           </Grid.Column>
         </Grid>
       </BrowserRouter>

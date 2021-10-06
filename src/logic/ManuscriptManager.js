@@ -39,4 +39,12 @@ export default class ManuscriptManager extends Base {
 
     return manuscript
   }
+
+  GetChapter = async(chapterId) => {
+    const url = `${this.#configuration.manuscriptEndpoint}/chapter/${chapterId}`
+    let response = await fetch(url)
+    let chapter = await response.json()
+    
+    return chapter[0].chapterText
+  }
 }

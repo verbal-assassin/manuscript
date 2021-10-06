@@ -18,7 +18,14 @@ function Structure(props) {
     const newIndex = activeIndex === index ? -1 : index;
 
     setActiveIndex(newIndex);
+    
   };
+
+  const handleChapterClick = (chapterGuid) => {
+    
+    console.log(`Chapter Guid => ${chapterGuid}`)
+    props.onChapterChange(chapterGuid)
+  }
 
   useEffect(() => {
     console.log(`PROPS => ${props}`);
@@ -53,7 +60,7 @@ function Structure(props) {
             <Icon name="folder" />
             Chapters
           </Accordion.Title>
-          <Accordion.Content active={activeIndex === 0}>
+          <Accordion.Content active={activeIndex === 0} exclusive={false}>
             <List.Item>
               <List.Content>
                 <List.List>
@@ -61,7 +68,7 @@ function Structure(props) {
                     props.chapters.length > 0 &&
                     props.chapters.map((chapter) => {
                       return (
-                        <List.Item>
+                        <List.Item onClick={() => handleChapterClick(chapter.guid)}>
                           <List.Icon name="file" />
                           <List.Content>
                             <List.Header>{`Chapter ${chapter.chapter}`}</List.Header>
@@ -76,9 +83,6 @@ function Structure(props) {
               </List.Content>
             </List.Item>
           </Accordion.Content>
-        </Accordion>
-
-        <Accordion styled>
           <Accordion.Title
             active={activeIndex === 1}
             index={1}
@@ -112,7 +116,7 @@ function Structure(props) {
           </Accordion.Content>
         </Accordion>
 
-        <Accordion styled>
+        <Accordion styled exclusive={false}>
           <Accordion.Title
             active={activeIndex === 2}
             index={2}

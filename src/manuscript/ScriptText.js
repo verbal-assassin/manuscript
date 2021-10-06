@@ -1,30 +1,39 @@
 import React, { useState, useEffect } from "react";
 import ContentEditable from "react-contenteditable";
 
-export const ScriptText = ({ text, fontSize }) => {
-  console.log(`fontsize = ${fontSize}`)
+export const ScriptText = ({ manuText, fontSize, onWordCountChange }) => {
 
-  const [scriptText, setScriptText] = useState("<h1>hello</h1>")
+  const [rrr, setrrr] = useState(manuText);
+  const [fake, setfake] = useState(false);
+  console.log(`after RRR = ${rrr}`);
+
+  useEffect(() => {
+
+    setrrr(manuText);
+    onWordCountChange(rrr)
+  }, [manuText]);
+
   const [editable, setEditable] = useState(false);
 
   const handleChange = (evt) => {
 
-    setScriptText(evt.target.value)
-  }
+    const currentValue = evt.target.value;
+    setrrr(currentValue);
+    onWordCountChange(rrr)
+  };
 
   return (
-      <ContentEditable
-        html={scriptText}
-        onChange={handleChange}
-        disabled={editable}
-        style={{ 
-          //fontSize: `${fontSize}px`, 
-          fontSize: '12 px',
-          textAlign: 'left',
-          padding: '5px',
-          border: '1px dashed #aaa',
-          minHeight: '100px'
-        }}
-      />
+    <ContentEditable
+      html={rrr}
+      onChange={handleChange}
+      disabled={false}
+      style={{
+        fontSize: "12 px",
+        textAlign: "left",
+        padding: "5px",
+        border: "1px dashed #aaa",
+        minHeight: "100px",
+      }}
+    />
   );
 };
